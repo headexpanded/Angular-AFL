@@ -8,13 +8,7 @@ import { Club } from '../club';
   selector: 'app-club-details',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <article>
-      <section class="listing-description">
-        <h2 class="listing-heading">{{ club?.name }}</h2>
-      </section>
-    </article>
-  `,
+  templateUrl: './club-details.component.html',
   styleUrls: ['./club-details.component.css'],
 })
 export class ClubDetailsComponent {

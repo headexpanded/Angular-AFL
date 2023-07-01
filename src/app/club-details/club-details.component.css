@@ -6,7 +6,13 @@
   float: right;
 }
 
-.listing-heading {
+.club-description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.club-heading {
   font-size: 36pt;
   font-weight: bold;
   margin-bottom: 15px;
@@ -44,25 +50,7 @@ li {
   margin-bottom: 15px;
 }
 
-label, input {
-  display: block;
-}
-label {
-  color: var(--secondary-color);
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12pt;
-}
-input {
-  font-size: 16pt;
-  margin-bottom: 15px;
-  padding: 10px;
-  width: 400px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: solid .3px;
-}
+
 @media (max-width: 1024px) {
   .listing-photo {
     width: 100%;

@@ -1,34 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
-import { AflClubComponent } from '../afl-club/afl-club.component';
 import { Club } from '../club';
 import { ClubService } from '../club.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, AflClubComponent],
-  template: `
-    <section>
-      <form>
-        <input type="text" placeholder="Filter by club" #filter />
-        <button
-          class="primary"
-          type="button"
-          (click)="filterResults(filter.value)"
-        >
-          Search
-        </button>
-      </form>
-    </section>
-    <section class="results">
-      <app-afl-club
-        *ngFor="let club of filteredClubList"
-        [club]="club"
-      ></app-afl-club>
-    </section>
-  `,
+  imports: [CommonModule,  RouterLink, RouterOutlet],
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
@@ -52,12 +33,4 @@ export class HomeComponent {
     });
     this.filteredClubList = this.clubLadder;
   }
-
-  /* aflClub: Club = {
-    logo: '/wp-content/themes/squiggle/assets/images/Richmond.png',
-    id: 14,
-    debut: 1908,
-    name: 'Richmond',
-    abbrev: 'RIC',
-  }; */
 }

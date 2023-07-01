@@ -9,17 +9,14 @@ import { Club } from '../club';
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet],
   template: `
-    <section class="listing">
-      <a [routerLink]="['/details', club.id]">
-        <h2 class="listing-heading">{{ club.name }}</h2>
-        <p class="listing-location">Rank: {{ club.rank }}</p>
-        <p class="listing-location">Points: {{ club.pts }}</p>
-        <p class="listing-location">Played: {{ club.played }}</p>
-        <p class="listing-location">Wins: {{ club.wins }}</p>
-        <p class="listing-location">Losses: {{ club.losses }}</p>
-        <p class="listing-location">Percentage: {{ club.percentage }}</p>
-      </a>
-    </section>
+    <span>{{ club.rank }}</span>
+    <span>{{ club.name }}</span>
+    <span>{{ club.pts }}</span>
+    <span>{{ club.played }}</span>
+    <span>{{ club.wins }}</span>
+    <span>{{ club.draws }}</span>
+    <span>{{ club.losses }}</span>
+    <span>{{ club.percentage }}</span>
   `,
   styleUrls: ['./afl-club.component.css'],
 })
