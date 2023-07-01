@@ -40,12 +40,16 @@ export class HomeComponent {
     if (!text) {
       this.filteredClubList = this.clubLadder;
     }
-    this.filteredClubList = this.clubLadder.filter(club =>club?.name.toLowerCase().includes(text.toLowerCase()));
-    
+    this.filteredClubList = this.clubLadder.filter((club) =>
+      club?.name.toLowerCase().includes(text.toLowerCase())
+    );
   }
 
   constructor() {
-    this.clubLadder = this.clubService.getAllClubs();
+    this.clubService.getAllClubs().then((clubLadder: Club[]) => {
+      this.clubLadder = clubLadder;
+      this.filteredClubList = clubLadder;
+    });
     this.filteredClubList = this.clubLadder;
   }
 

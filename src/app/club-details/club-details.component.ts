@@ -23,7 +23,9 @@ export class ClubDetailsComponent {
   club: Club | undefined;
   clubId = -1;
   constructor() {
-    const clubId = Number(this.route.snapshot.params['id']);
-    this.club = this.clubService.getClubById(clubId);
+    const clubId = parseInt(this.route.snapshot.params['id'], 10);
+    this.clubService.getClubById(clubId).then((club) => {
+      this.club = club;
+    });
   }
 }
