@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AflLadderComponent } from '../afl-ladder/afl-ladder.component';
 import { AflClubComponent } from '../afl-club/afl-club.component';
 import { Club } from '../club';
 import { ClubService } from '../club.service';
@@ -9,7 +8,7 @@ import { ClubService } from '../club.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, AflLadderComponent, AflClubComponent],
+  imports: [CommonModule,  AflClubComponent],
   template: `
     <section>
       <form>
