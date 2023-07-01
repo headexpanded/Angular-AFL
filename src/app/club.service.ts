@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { Club } from './club';
 
 @Injectable({
@@ -6,6 +7,9 @@ import { Club } from './club';
 })
 export class ClubService {
   url = 'http://localhost:3000/standings';
+  realUrl = 'https://api.squiggle.com.au/?q=standings';
+
+  constructor() {}
 
   async getAllClubs(): Promise<Club[]> {
     const data = await fetch(this.url);
@@ -14,8 +18,6 @@ export class ClubService {
 
   async getClubById(id: number): Promise<Club | undefined> {
     const data = await fetch(`${this.url}/${id}`);
-    return await data.json() ?? {};
+    return (await data.json()) ?? {};
   }
-
-  constructor() {}
 }
