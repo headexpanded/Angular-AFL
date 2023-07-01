@@ -1,0 +1,49 @@
+<section>
+      <table class="clubTable">
+        <thead class="table-header">
+          <tr>
+            <th>#</th>
+            <th>Club</th>
+            <th>Points</th>
+            <th>Played</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+
+        <tbody *ngFor="let club of filteredClubList">
+          <tr class="table-row">
+            <td class="table-data">
+              <p class="listing-item">{{ club.rank }}</p>
+            </td>
+            <a [routerLink]="['/details', club.id]">
+              <td class="table-data-club-name">
+                <p class="listing-heading">{{ club.name }}</p>
+              </td>
+            </a>
+
+            <td class="table-data">
+              <p class="listing-item">{{ club.pts }}</p>
+            </td>
+            <td class="table-data">
+              <p class="listing-item">{{ club.played }}</p>
+            </td>
+            <td class="table-data">
+              <p class="listing-item">{{ club.wins }}</p>
+            </td>
+
+            <td class="table-data">
+              <p class="listing-item">{{ club.draws }}</p>
+            </td>
+            <td class="table-data">
+              <p class="listing-item">{{ club.losses }}</p>
+            </td>
+            <td class="table-data">
+              <p class="listing-item">{{ club.percentage | number : '1.2-2' }}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
