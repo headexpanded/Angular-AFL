@@ -8,17 +8,23 @@ import { ClubService } from '../club.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,  AflClubComponent],
+  imports: [CommonModule, AflClubComponent],
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by club" />
-        <button class="primary" type="button">Search</button>
+        <input type="text" placeholder="Filter by club" #filter />
+        <button
+          class="primary"
+          type="button"
+          (click)="filterResults(filter.value)"
+        >
+          Search
+        </button>
       </form>
     </section>
     <section class="results">
       <app-afl-club
-        *ngFor="let club of clubLadder"
+        *ngFor="let club of filteredClubList"
         [club]="club"
       ></app-afl-club>
     </section>
@@ -27,10 +33,20 @@ import { ClubService } from '../club.service';
 })
 export class HomeComponent {
   clubLadder: Club[] = [];
+  filteredClubList: Club[] = [];
   clubService: ClubService = inject(ClubService);
+
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredClubList = this.clubLadder;
+    }
+    this.filteredClubList = this.clubLadder.filter(club =>club?.name.toLowerCase().includes(text.toLowerCase()));
+    
+  }
 
   constructor() {
     this.clubLadder = this.clubService.getAllClubs();
+    this.filteredClubList = this.clubLadder;
   }
 
   /* aflClub: Club = {
