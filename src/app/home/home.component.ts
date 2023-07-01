@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AflLadderComponent } from '../afl-ladder/afl-ladder.component';
 import { AflClubComponent } from '../afl-club/afl-club.component';
+import { Club } from '../club';
+import { ClubService } from '../club.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, AflClubComponent],
+  imports: [CommonModule, AflLadderComponent, AflClubComponent],
   template: `
     <section>
       <form>
@@ -15,9 +18,27 @@ import { AflClubComponent } from '../afl-club/afl-club.component';
       </form>
     </section>
     <section class="results">
-      <app-afl-club></app-afl-club>
+      <app-afl-club
+        *ngFor="let club of clubLadder"
+        [club]="club"
+      ></app-afl-club>
     </section>
   `,
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  clubLadder: Club[] = [];
+  clubService: ClubService = inject(ClubService);
+
+  constructor() {
+    this.clubLadder = this.clubService.getAllClubs();
+  }
+
+  /* aflClub: Club = {
+    logo: '/wp-content/themes/squiggle/assets/images/Richmond.png',
+    id: 14,
+    debut: 1908,
+    name: 'Richmond',
+    abbrev: 'RIC',
+  }; */
+}
