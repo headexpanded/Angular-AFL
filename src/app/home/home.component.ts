@@ -8,29 +8,18 @@ import { ClubService } from '../club.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,  RouterLink, RouterOutlet],
-  templateUrl: './home.component.html',
+  imports: [CommonModule, RouterLink, RouterOutlet],
+  templateUrl: 'home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
   clubLadder: Club[] = [];
-  filteredClubList: Club[] = [];
-  clubService: ClubService = inject(ClubService);
+  //clubService: ClubService = inject(ClubService);
 
-  filterResults(text: string) {
-    if (!text) {
-      this.filteredClubList = this.clubLadder;
-    }
-    this.filteredClubList = this.clubLadder.filter((club) =>
-      club?.name.toLowerCase().includes(text.toLowerCase())
-    );
-  }
-
-  constructor() {
-    this.clubService.getAllClubs().then((clubLadder: Club[]) => {
+  constructor(private clubService: ClubService) {
+    this.clubService.getAllClubs().subscribe((clubLadder: Club[]) => {
+      console.log(clubLadder);
       this.clubLadder = clubLadder;
-      this.filteredClubList = clubLadder;
     });
-    this.filteredClubList = this.clubLadder;
   }
 }

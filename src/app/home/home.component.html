@@ -13,16 +13,16 @@
           </tr>
         </thead>
 
-        <tbody *ngFor="let club of filteredClubList">
-          <tr class="table-row">
+        <tbody >
+          <tr *ngFor="let club of clubLadder" class="table-row">
             <td class="table-data">
               <p class="listing-item">{{ club.rank }}</p>
             </td>
-            <a [routerLink]="['/details', club.id]">
-              <td class="table-data-club-name">
+            <td class="table-data-club-name">
+                <a [routerLink]="['/details', club.id]">
                 <p class="listing-heading">{{ club.name }}</p>
+              </a>
               </td>
-            </a>
 
             <td class="table-data">
               <p class="listing-item">{{ club.pts }}</p>

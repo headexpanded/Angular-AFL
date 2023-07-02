@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Club } from './club';
 
@@ -6,14 +9,18 @@ import { Club } from './club';
   providedIn: 'root',
 })
 export class ClubService {
+  // testing json data source
   url = 'http://localhost:3000/standings';
-  realUrl = 'https://api.squiggle.com.au/?q=standings';
+  // live json data source
+  standingsUrl = 'https://api.squiggle.com.au/?q=standings';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  async getAllClubs(): Promise<Club[]> {
-    const data = await fetch(this.url);
-    return (await data.json()) ?? [];
+  getAllClubs(): Observable<Club[]> {
+    return this.http.get<Club[]>(this.standingsUrl, {
+      observe: 'body',
+      responseType: 'json',
+    }).pipe(map((data:any)=>data.standings));
   }
 
   async getClubById(id: number): Promise<Club | undefined> {
