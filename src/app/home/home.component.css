@@ -2,7 +2,7 @@
 .clubTable{
   width: 70%;
   margin: auto;
-  margin-top: 28px;
+  margin-top: 16px;
   margin-bottom: 28px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -25,6 +25,10 @@
 
 .table-data{
   text-align: center;
+}
+
+.table-data p{
+  padding: 4px 0px;
 }
 
 .table-data-club-name{

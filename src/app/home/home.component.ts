@@ -14,11 +14,10 @@ import { ClubService } from '../club.service';
 })
 export class HomeComponent {
   clubLadder: Club[] = [];
-  //clubService: ClubService = inject(ClubService);
+  clubService: ClubService = inject(ClubService);
 
-  constructor(private clubService: ClubService) {
+  constructor() {
     this.clubService.getAllClubs().subscribe((clubLadder: Club[]) => {
-      console.log(clubLadder);
       this.clubLadder = clubLadder;
     });
   }

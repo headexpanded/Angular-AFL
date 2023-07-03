@@ -1,4 +1,4 @@
-.listing-photo {
+.club-logo {
   height: 600px;
   width: 50%;
   object-fit: cover;
@@ -18,26 +18,24 @@
   margin-bottom: 15px;
 }
 
-.listing-location::before {
-  content: url('/assets/location-pin.svg') / '';
-}
 
-.listing-location {
+
+.club-location {
   font-size: 24pt;
   margin-bottom: 15px;
 }
 
-.listing-features > .section-heading {
+.club-features > .section-heading {
   color: var(--secondary-color);
   font-size: 24pt;
   margin-bottom: 15px;
 }
 
-.listing-features {
+.club-features {
   margin-bottom: 20px;
 }
 
-.listing-features li {
+.club-features li {
   font-size: 14pt;
 }
 

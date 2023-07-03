@@ -9,22 +9,33 @@ import { Club } from './club';
   providedIn: 'root',
 })
 export class ClubService {
-  // testing json data source
+
+  // testing json data source: run json-server --watch
   url = 'http://localhost:3000/standings';
+
   // live json data source
-  standingsUrl = 'https://api.squiggle.com.au/?q=standings';
+  private standingsUrl = 'https://api.squiggle.com.au/?q=standings';
+  private teamUrl = 'https://api.squiggle.com.au/?q=teams;team=';
 
   constructor(private http: HttpClient) {}
 
   getAllClubs(): Observable<Club[]> {
-    return this.http.get<Club[]>(this.standingsUrl, {
-      observe: 'body',
-      responseType: 'json',
-    }).pipe(map((data:any)=>data.standings));
+    return this.http
+      .get<Club[]>(this.standingsUrl, {
+        observe: 'body',
+        responseType: 'json',
+      })
+      .pipe(map((data: any) => data.standings));
   }
 
-  async getClubById(id: number): Promise<Club | undefined> {
-    const data = await fetch(`${this.url}/${id}`);
-    return (await data.json()) ?? {};
+  getClubById(id: number): Observable<Club | undefined> {
+    const teamUrl = this.teamUrl + id;
+    console.log(teamUrl)
+    return this.http.get<Club>(teamUrl, {
+      observe: 'body',
+      responseType: 'json',
+    })
+      .pipe(map((data: any) => data.teams));
   }
 }
+
