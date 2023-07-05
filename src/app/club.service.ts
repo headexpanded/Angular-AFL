@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Club } from './club';
+import { LogoService } from './logo.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +17,9 @@ export class ClubService {
   // live json data source
   private standingsUrl = 'https://api.squiggle.com.au/?q=standings';
   private teamUrl = 'https://api.squiggle.com.au/?q=teams;team=';
+  private giants = 'GWS Giants';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private logoService: LogoService) {}
 
   getAllClubs(): Observable<Club[]> {
     return this.http
@@ -25,7 +27,17 @@ export class ClubService {
         observe: 'body',
         responseType: 'json',
       })
-      .pipe(map((data: any) => data.standings));
+      .pipe(
+        map((data: any) => {
+          const teams = this.logoService.addLogoToArray(data.standings);
+          teams.forEach((club: Club) => {
+            if (club.id === 9) {
+              club.name = 'GWS Giants';
+            }
+          })
+          return teams;
+        })
+      );
   }
 
   getClubById(id: number): Observable<Club | undefined> {
