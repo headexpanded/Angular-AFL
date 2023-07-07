@@ -1,27 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Be Vietnam Pro', sans-serif;
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter.var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+  font-display: fallback;
 }
+
 :root {
-  --primary-color: #221cd6;
-  --secondary-color: #8B89E6;
+  --MainFont: "Inter", sans-serif;
+  --TitleColor: #221cd6;
+  --ClubDataColor: #1a1a1a;
+  --secondary-color: #8b89e6;
   --accent-color: whitesmoke;
-  --shadow-color: #E8E8E8;
+  --shadow-color: #e8e8e8;
 }
 
-button.primary {
-  padding: 10px;
-  border: solid 1px var(--primary-color);
-  background: var(--primary-color);
-  color: white;
-  border-radius: 8px;
+html {
+  scroll-behavior: smooth;
+  user-select: none;
 }
 
-a{
+body {
+  font-family: var(--MainFont), sans-serif;
+  width: min(1000px, calc(70% + 100px));
+  margin:auto;
+}
+
+section{
+  padding: 20px 0px;
+}
+
+a {
   text-decoration: none;
 }

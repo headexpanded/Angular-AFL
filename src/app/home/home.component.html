@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
       <table class="clubTable">
         <thead class="table-header">
           <tr>
@@ -20,6 +20,7 @@
             </td>
             <td class="table-data-club-name">
                 <a [routerLink]="['/details', club.id]">
+                  
                 <p class="listing-heading">{{ club.name }}</p>
               </a>
               </td>
@@ -46,4 +47,10 @@
           </tr>
         </tbody>
       </table>
+    </section> -->
+
+    <section>
+      <app-afl-club *ngFor="let club of clubLadder" [club] = "club">
+        
+      </app-afl-club>
     </section>

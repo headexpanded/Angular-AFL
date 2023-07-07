@@ -10,8 +10,10 @@ import { HomeComponent } from './home/home.component';
   template: `
     <main>
       <a [routerLink]="['/']">
-        <header class="brand-name">
-          <h1>Angular-AFL</h1>
+        <header>
+          <span translate="no">
+            <h1>ANGULAR-AFL</h1>
+          </span>
         </header>
       </a>
       <section class="content">

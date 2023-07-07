@@ -1,34 +1,106 @@
-.listing {
+
+
+
+.club-ladder-data {
+  
   display: flex;
   flex-direction: row;
-  background: var(--accent-color);
-  /* padding: 12px 0px 12px 0px; */
-  border-bottom: 2px solid var(--primary-color);
-  width:100%;
-}
-.listing-heading {
-  color: var(--primary-color);
-  padding: 8px 20px 8px 20px;
-}
-.listing-photo {
-  height: 250px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 30px 30px 0 0;
-}
-.listing-item {
-  padding: 8px 20px 8px 20px;
-}
-.listing-location::before {
-  content: url("/assets/location-pin.svg") / "";
+  font-size: clamp(0.5rem, 2.0vw, 1.5rem);
+  align-items: center;
+  justify-content:center;
+  height: 50px;
+  
+
+  
+  border: 1px solid red;
+  padding: 0px 8px;
 }
 
-section.listing a {
-  padding-left: 20px;
-  text-decoration: none;
-  color: var(--primary-color);
+span {
+  color: var(--ClubDataColor);
+  
+  font-weight: 400;
 }
-section.listing a::after {
-  content: "\203A";
-  margin-left: 5px;
+
+img {
+  height: 25px;
+  width: 25px;
 }
+
+.club-rank{
+  border: solid 1px yellow;
+  text-align: center;
+  width: clamp(4vw, 10px, 24px);
+  
+}
+
+.club-logo {
+  border: solid 1px yellow;
+  display:none;
+}
+
+.club-name {
+  border: solid 1px yellow;
+  padding: 0px 8px;
+  text-align: left;
+  width: clamp(24vw, 100px, 240px);
+  
+  
+}
+
+.club-points {
+  border: solid 1px yellow;
+  
+  text-align: center;
+  width: clamp(6vw, 10px, 24px);
+  
+}
+
+.club-played{
+  border: solid 1px yellow;
+  
+  text-align: center;
+  width: clamp(6vw, 10px, 24px);
+  }
+
+  .club-wins{
+    border: solid 1px yellow;
+    text-align: center;
+    width: clamp(6vw, 10px, 24px);
+    
+  }
+
+  .club-draws{
+    border: solid 1px yellow;
+    text-align: center;
+    width: clamp(6vw, 10px, 24px);
+  }
+
+  .club-losses{
+    border: solid 1px yellow;
+    text-align: center;
+    width: clamp(6vw, 10px, 24px);
+    
+  }
+
+  .club-percentage{
+    border: solid 1px yellow;
+    text-align: center;
+    width: clamp(10vw, 20px, 48px);
+    
+  }
+
+   @media screen and (min-width: 769px) {
+  .club-logo {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  };  
+  
+
+} 
+
+
+
