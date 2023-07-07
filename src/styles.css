@@ -17,9 +17,13 @@
   --MainFont: "Inter", sans-serif;
   --TitleColor: #221cd6;
   --ClubDataColor: #1a1a1a;
+
+  --DataSpanWidth: clamp(6vw, 10px, 24px);
   --secondary-color: #8b89e6;
   --accent-color: whitesmoke;
   --shadow-color: #e8e8e8;
+
+
 }
 
 html {

@@ -4,12 +4,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 import { Club } from '../club';
 import { ClubService } from '../club.service';
+import { LadderHeaderComponent } from '../ladder-header/ladder-header.component';
 import { AflClubComponent } from '../afl-club/afl-club.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, AflClubComponent],
+  imports: [CommonModule, RouterLink, RouterOutlet, LadderHeaderComponent, AflClubComponent],
   templateUrl: 'home.component.html',
   styleUrls: ['./home.component.css'],
 })

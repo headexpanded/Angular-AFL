@@ -1,24 +1,20 @@
-
-
-
 .club-ladder-data {
-  
+  align-items: center;
   display: flex;
   flex-direction: row;
-  font-size: clamp(0.5rem, 2.0vw, 1.5rem);
-  align-items: center;
-  justify-content:center;
-  height: 50px;
-  
-
-  
-  border: 1px solid red;
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
+  height: min(40px, 2rem);
+  justify-content: center;
   padding: 0px 8px;
+  text-align: center;
+}
+
+.finals {
+  border-bottom: 2px dotted red;
 }
 
 span {
   color: var(--ClubDataColor);
-  
   font-weight: 400;
 }
 
@@ -27,80 +23,50 @@ img {
   width: 25px;
 }
 
-.club-rank{
-  border: solid 1px yellow;
-  text-align: center;
+.club-rank {
   width: clamp(4vw, 10px, 24px);
-  
 }
 
 .club-logo {
-  border: solid 1px yellow;
-  display:none;
+  display: none;
 }
 
 .club-name {
-  border: solid 1px yellow;
   padding: 0px 8px;
   text-align: left;
   width: clamp(24vw, 100px, 240px);
-  
-  
 }
 
 .club-points {
-  border: solid 1px yellow;
-  
-  text-align: center;
-  width: clamp(6vw, 10px, 24px);
-  
+  width: var(--DataSpanWidth);
 }
 
-.club-played{
-  border: solid 1px yellow;
-  
-  text-align: center;
-  width: clamp(6vw, 10px, 24px);
-  }
+.club-played {
+  width: var(--DataSpanWidth);
+}
 
-  .club-wins{
-    border: solid 1px yellow;
-    text-align: center;
-    width: clamp(6vw, 10px, 24px);
-    
-  }
+.club-wins {
+  width: var(--DataSpanWidth);
+}
 
-  .club-draws{
-    border: solid 1px yellow;
-    text-align: center;
-    width: clamp(6vw, 10px, 24px);
-  }
+.club-draws {
+  width: var(--DataSpanWidth);
+}
 
-  .club-losses{
-    border: solid 1px yellow;
-    text-align: center;
-    width: clamp(6vw, 10px, 24px);
-    
-  }
+.club-losses {
+  width: var(--DataSpanWidth);
+}
 
-  .club-percentage{
-    border: solid 1px yellow;
-    text-align: center;
-    width: clamp(10vw, 20px, 48px);
-    
-  }
+.club-percentage {
+  width: clamp(10vw, 20px, 48px);
+}
 
-   @media screen and (min-width: 769px) {
+@media screen and (min-width: 769px) {
   .club-logo {
-    display:flex;
-    flex-direction: column;
     align-items: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 8px;
-  };  
-  
-
-} 
-
-
-
+  }
+}

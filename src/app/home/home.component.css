@@ -1,75 +1,7 @@
 
-.clubTable{
-  width: 70%;
-  margin: auto;
-  margin-top: 16px;
-  margin-bottom: 28px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
-  background-color: #f2f2f2;
-  padding: 12px;
-}
 
-.table-header th {
-  background-color: rgb(162, 194, 249);
-  color: rgb(20, 20, 20);
-  padding: var(--content-padding);
-  font-weight: bold;
-  text-align: center;
-}
-
-.table-row{
-  padding: var(--content-padding);
-}
-
-.table-data{
-  text-align: center;
-}
-
-.table-data p{
-  padding: 4px 0px;
-}
-
-.table-data-club-name{
-  padding-left: 8px;
-}
-
-.results {
-  display: grid;
-  column-gap: 14px;
-  row-gap: 14px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
-  margin-top: 50px;
-  justify-content: space-around;
-}
-
-.new-results{
-  display: flex;
-  flex-direction: row;
-  row-gap: 14px;
+.club-wrapper{
+  position: relative;
 }
 
 
-button {
-  padding: 10px;
-  border: solid 1px var(--primary-color);
-  background: var(--primary-color);
-  color: white;
-  border-radius: 8px;
-}
-
-@media (min-width: 500px) and (max-width: 768px) {
-  .results {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .input[type="text"] {
-    width: 70%;
-  }
-}
-
-@media (max-width: 499px) {
-  .results {
-    grid-template-columns: 1fr;
-  }
-}
