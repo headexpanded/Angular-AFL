@@ -14,4 +14,5 @@ export interface Club {
   percentage: number;
   wins: number;
   name: string;
+  logo?: string;
 }
