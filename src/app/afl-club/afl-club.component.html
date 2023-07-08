@@ -1,4 +1,4 @@
-<div class="club-ladder-data" [ngClass]="{'finals': club.rank === 8}">
+<div class="club-ladder-data" [ngClass]="{'finals': club.rank === 8, 'top-four': club.rank === 4}">
   <a [routerLink]="['/details', club.id]">
     <div class="club-rank">
       <span>{{ club.rank }}</span>
