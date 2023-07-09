@@ -1,0 +1,40 @@
+
+
+.club-details-header {
+  align-items: center;
+  background-color: var(--TitleColor);
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
+  height: 50px;
+  padding: 0px 8px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.club-details-header  span {
+    color: white;
+    font-weight: 700;
+}
+
+.round{
+  width: clamp(6vw, 10px, 24px);
+}
+
+.opposition{
+  padding: 0px 16px;
+  text-align: left;
+  width: clamp(25vw, 100px, 240px)
+}
+
+.venue{
+  padding: 0px 16px;
+  text-align: left;
+  width: clamp(20vw, 100px, 240px);
+}
+
+.for, .against{
+  width: clamp(20vw, 100px, 240px);
+  border: 1px solid red;
+}
+

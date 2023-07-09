@@ -1,7 +1,5 @@
 
 
-
-
 .club-ladder-header {
   align-items: center;
   background-color: var(--TitleColor);
@@ -55,7 +53,10 @@ span {
 }
 
 .club-percentage {
-  width: clamp(10vw, 20px, 48px);
+  width: var(--DataSpanWidth);
+  text-align: left;
+  padding-left: 20px;
+  font-weight: 900;
 }
 
 @media screen and (min-width: 769px) {

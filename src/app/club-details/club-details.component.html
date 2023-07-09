@@ -1,8 +1,47 @@
-<section class="club-description">
-  <img src="{{ club?.logo }}" alt="">
-  <h2 class="club-heading">{{ club?.name }}</h2>
-  <p>Played: {{ club?.played }}</p>
-  <p>{{ club?.wins }}</p>
-  <p>{{ club?.draws }}</p>
-  <p>{{ club?.losses }}</p>
+<section>
+  <div class="club-header" *ngIf="club">
+    <div class="club-logo"><img src="{{ club?.logo }}" alt="" /></div>
+    <!-- <h2 class="club-name">{{ club?.name }}</h2> -->
+    <!-- <div class="club-logo"><img src="{{ club?.logo }}" alt=""></div> -->
+  </div>
+  <app-club-details-header></app-club-details-header>
+  <div class="club-data" *ngFor="let game of clubGames">
+    <span class="round">{{ game.round }}</span>
+    <span class="opposition">{{
+      game.hteamid === club?.id ? game.ateam : game.hteam
+    }}</span>
+    <span class="venue">{{ game.venue }}</span>
+    <span class="result">{{
+      game?.complete !== 100
+        ? ""
+        : game?.ascore === game?.hscore
+        ? "D"
+        : game?.winnerteamid === club?.id
+        ? "W"
+        : "L"
+    }}</span>
+
+    <div class="for">
+      <span class="score">{{
+        game?.hteamid === club?.id ? game.hgoals : game.agoals
+      }}</span
+      ><span class="score">{{
+        game?.hteamid === club?.id ? game.hbehinds : game.abehinds
+      }}</span
+      ><span class="score">{{
+        game?.hteamid === club?.id ? game.hscore : game.ascore
+      }}</span>
+    </div>
+    <div class="against">
+      <span class="score">{{
+        game?.hteamid !== club?.id ? game.hgoals : game.agoals
+      }}</span
+      ><span class="score">{{
+        game?.hteamid !== club?.id ? game.hbehinds : game.abehinds
+      }}</span
+      ><span class="score">{{
+        game?.hteamid !== club?.id ? game.hscore : game.ascore
+      }}</span>
+    </div>
+  </div>
 </section>

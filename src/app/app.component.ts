@@ -7,20 +7,7 @@ import { HomeComponent } from './home/home.component';
   selector: 'app-root',
   standalone: true,
   imports: [HomeComponent, RouterModule],
-  template: `
-    <main>
-      <a [routerLink]="['/']">
-        <header>
-          <span translate="no">
-            <h1>ANGULAR-AFL</h1>
-          </span>
-        </header>
-      </a>
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-    </main>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {

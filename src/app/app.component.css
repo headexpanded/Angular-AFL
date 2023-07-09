@@ -1,34 +1,18 @@
 :host {
-  
+  height: calc(100% - 24px);
 }
-
-/* @supports (font-variation-settings: normal) {
-  :root {
-    font-family: 'Inter', Tahoma, Verdana, sans-serif;
-  }
-} */
-
-
-
-
 
 header {
-  box-shadow: 0px 2px 4px var(--shadow-color);
   display: block;
-  margin: 4px 0px;
-  padding: var(--content-padding);
+  margin: 8px 0px 0px 0px;
 }
 
-header h1 {
+header span h1 {
   color: var(--TitleColor);
   font-family: var(--MainFont);
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.1rem;
+  padding-bottom: 4px;
+  text-align: left;
 }
-
-
-
-
-
-

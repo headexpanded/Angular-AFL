@@ -15,14 +15,10 @@
 
 :root {
   --MainFont: "Inter", sans-serif;
-  --TitleColor: #221cd6;
+  --TitleColor: #1d18bc;
   --ClubDataColor: #1a1a1a;
 
   --DataSpanWidth: clamp(6vw, 10px, 24px);
-  --secondary-color: #8b89e6;
-  --accent-color: whitesmoke;
-  --shadow-color: #e8e8e8;
-
 
 }
 
@@ -33,12 +29,12 @@ html {
 
 body {
   font-family: var(--MainFont), sans-serif;
-  width: min(1000px, calc(70% + 100px));
+  width: min(1200px, calc(80% + 120px));
   margin:auto;
 }
 
 section{
-  padding: 20px 0px;
+  padding: 4px 0px;
 }
 
 a {

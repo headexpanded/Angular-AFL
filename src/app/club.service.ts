@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { Club } from './club';
 import { LogoService } from './logo.service';
+import { ClubGames } from './club-games';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,14 @@ export class ClubService {
 
   private fetchStandings(): Observable<any> {
     return this.http.get(this.standingsUrl, {
+      observe: 'body',
+      responseType: 'json',
+    });
+  }
+
+  private fetchClubData(teamId: number): Observable<any> {
+    const clubDataUrl = `https://api.squiggle.com.au/?q=games;year=2023;team=${teamId}`;
+    return this.http.get(clubDataUrl, {
       observe: 'body',
       responseType: 'json',
     });
@@ -49,6 +58,31 @@ export class ClubService {
           club.name = 'GWS Giants';
         }
         return club;
+      })
+    );
+  }
+
+  getClubGamesById(id: number): Observable<ClubGames[]> {
+    return this.fetchClubData(id).pipe(
+      map((data: any) => {
+        const games = this.logoService.addLogoToArray(data.games);
+        const clubGames = games.filter(
+          (game: any) => game.ateamid === id || game.hteamid === id
+        );
+        clubGames.forEach((game: any) => {
+          if (game.hteamid === 9) {
+            game.hteam = 'GWS Giants';
+          }
+          if (game.ateamid === 9) {
+            game.ateam = 'GWS Giants';
+          }
+          if (game.venue === 'Sydney Showground') {
+            game.venue = 'Showgrounds';
+          }
+        })
+        
+
+        return clubGames;
       })
     );
   }
