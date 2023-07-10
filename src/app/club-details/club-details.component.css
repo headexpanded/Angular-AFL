@@ -55,7 +55,23 @@
 }
 
 .result {
+  display: inline-block;
   width: var(--DataSpanWidth);
+}
+
+.grey-box{
+  background-color: gray;
+  color:white;
+}
+
+.green-box{
+  background-color: green;
+  color:white;
+}
+
+.red-box{
+  background-color: red;
+  color:white;
 }
 
 .for{
@@ -66,12 +82,18 @@ width: clamp(20vw, 100px, 240px);
   width: clamp(20vw, 100px, 240px);
 }
 
-
-
 .score {
   width: var(--DataSpanWidth);
   padding: 0px 8px;
   text-align: left;
+}
+
+.goals, .behinds{
+  font-size: smaller;
+}
+
+.total{
+  font-weight: 700;
 }
 
 
