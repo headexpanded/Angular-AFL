@@ -18,7 +18,7 @@
   --TitleColor: #1d18bc;
   --ClubDataColor: #1a1a1a;
 
-  --DataSpanWidth: clamp(6vw, 10px, 24px);
+  --DataSpanWidth: clamp(6vw, 10px, 20px);
 
 }
 

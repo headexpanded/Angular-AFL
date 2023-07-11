@@ -14,10 +14,10 @@ header span h1 {
   font-weight: 700;
   letter-spacing: -0.1rem;
   padding: 4px;
-  text-align: left;
+  text-align: centre;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
 }

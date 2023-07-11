@@ -22,26 +22,30 @@
     }}</span>
 
     <div class="for">
-      <span class="score goals">{{
-        game?.hteamid === club?.id ? game.hgoals : game.agoals
-      }}</span
-      ><span class="score behinds">{{
-        game?.hteamid === club?.id ? game.hbehinds : game.abehinds
-      }}</span
-      ><span class="score total">{{
-        game?.hteamid === club?.id ? game.hscore : game.ascore
-      }}</span>
+      <div class="scores">
+        <span class="score goals">{{
+          game?.hteamid === club?.id ? game.hgoals : game.agoals
+        }}</span
+        ><span class="score behinds">{{
+          game?.hteamid === club?.id ? game.hbehinds : game.abehinds
+        }}</span
+        ><span class="score total">{{
+          game?.hteamid === club?.id ? game.hscore : game.ascore
+        }}</span>
+      </div>
     </div>
     <div class="against">
-      <span class="score goals">{{
-        game?.hteamid !== club?.id ? game.hgoals : game.agoals
-      }}</span
-      ><span class="score behinds">{{
-        game?.hteamid !== club?.id ? game.hbehinds : game.abehinds
-      }}</span
-      ><span class="score total">{{
-        game?.hteamid !== club?.id ? game.hscore : game.ascore
-      }}</span>
+      <div class="scores">
+        <span class="score goals">{{
+          game?.hteamid !== club?.id ? game.hgoals : game.agoals
+        }}</span
+        ><span class="score behinds">{{
+          game?.hteamid !== club?.id ? game.hbehinds : game.abehinds
+        }}</span
+        ><span class="score total">{{
+          game?.hteamid !== club?.id ? game.hscore : game.ascore
+        }}</span>
+      </div>
     </div>
   </div>
 </section>
