@@ -1,6 +1,13 @@
-# ANGULAR-AFL
+<h1 align="center">Angular-AFL</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+<h3 align="center">A simple Aussie Rules AFL ladder, without the gambling ads.</h3>
+
+</br></br>
+The official AFL ladder is drenched in advertising and loads slowly.
+So this ladder has no ads and loads quickly. Click on a team for info about their season.
+- Data comes from the API at [Squiggle](https://squiggle.com.au/)
+
+- I used [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
 ## Contributing
 
