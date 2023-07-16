@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 import { Club } from '../club';
@@ -10,7 +10,7 @@ import { ClubDetailsHeaderComponent } from '../club-details-header/club-details-
 @Component({
   selector: 'app-club-details',
   standalone: true,
-  imports: [CommonModule, ClubDetailsHeaderComponent],
+  imports: [CommonModule, NgOptimizedImage, ClubDetailsHeaderComponent],
   templateUrl: './club-details.component.html',
   styleUrls: ['./club-details.component.css'],
 })

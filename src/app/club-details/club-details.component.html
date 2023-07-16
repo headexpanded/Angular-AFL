@@ -1,6 +1,6 @@
 <section>
   <div class="club-header" *ngIf="club">
-    <div class="club-logo"><img src="{{ club.logo }}" alt="Club logo" /></div>
+    <div class="club-logo"><img ngSrc="{{ club.logo }}" alt="Club logo" priority fill sizes="(max-width: 768px) 40vw 50vw"/></div>
     <!-- <h2 class="club-name">{{ club?.name }}</h2> -->
     <!-- <div class="club-logo"><img src="{{ club?.logo }}" alt=""></div> -->
   </div>

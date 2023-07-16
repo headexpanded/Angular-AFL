@@ -31,13 +31,14 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--MainFont), sans-serif;
-  width: min(1200px, calc(80% + 120px));
+  /* width: min(1200px, calc(80% + 120px)); */
   margin:auto;
   min-height: 100%;
 }
 
 section{
   padding: 4px 0px;
+  width: 100%;
 }
 
 a {

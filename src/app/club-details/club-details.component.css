@@ -12,20 +12,21 @@
 } */
 
 .club-logo {
+  position: relative;
   height: 28vw;
   width: 28vw;
-  object-fit: cover;
+  object-fit: contain;
   align-items: center;
   justify-content: center;
-  margin-top: -16px;
+  
   margin-bottom: 16px;
 }
 
-.club-logo img {
+/* .club-logo img {
   height: 100%;
   width: 100%;
   padding: 20px;
-}
+} */
 
 .club-data {
   display: flex;
