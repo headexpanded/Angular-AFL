@@ -6,6 +6,8 @@ import { Club } from '../club';
 import { ClubService } from '../club.service';
 import { LadderHeaderComponent } from '../ladder-header/ladder-header.component';
 import { AflClubComponent } from '../afl-club/afl-club.component';
+import { FooterComponent } from '../footer/footer.component';
+import { Footer } from '../footer';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +18,7 @@ import { AflClubComponent } from '../afl-club/afl-club.component';
     RouterOutlet,
     LadderHeaderComponent,
     AflClubComponent,
+    FooterComponent,
   ],
   templateUrl: 'home.component.html',
   styleUrls: ['./home.component.css'],
@@ -23,11 +26,13 @@ import { AflClubComponent } from '../afl-club/afl-club.component';
 export class HomeComponent {
   clubLadder: Club[] = [];
   clubService: ClubService = inject(ClubService);
+  footerLegend =
+    'Legend: # Rank, Pts Points, P Played, W Wins, D Draws, L Losses, % ';
+  footerLogo = '../public/github-1.svg';
 
   constructor() {
     this.clubService.getAllClubs().subscribe((clubLadder: Club[]) => {
       this.clubLadder = clubLadder;
     });
-    
   }
 }
