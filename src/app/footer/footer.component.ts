@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Footer } from '../footer';
 
 @Component({
   selector: 'app-footer',
@@ -12,5 +11,4 @@ import { Footer } from '../footer';
 export class FooterComponent {
   @Input()
   legend!: string;
-  logo!: './public/github-1.svg';
 }

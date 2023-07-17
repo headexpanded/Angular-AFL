@@ -7,7 +7,6 @@ import { ClubService } from '../club.service';
 import { LadderHeaderComponent } from '../ladder-header/ladder-header.component';
 import { AflClubComponent } from '../afl-club/afl-club.component';
 import { FooterComponent } from '../footer/footer.component';
-import { Footer } from '../footer';
 
 @Component({
   selector: 'app-home',
@@ -27,8 +26,7 @@ export class HomeComponent {
   clubLadder: Club[] = [];
   clubService: ClubService = inject(ClubService);
   footerLegend =
-    'Legend: # Rank, Pts Points, P Played, W Wins, D Draws, L Losses, % ';
-  footerLogo = '../public/github-1.svg';
+    'Legend: # Rank, Pts Points, P Played, W Wins, D Draws, L Losses, % Percentage';
 
   constructor() {
     this.clubService.getAllClubs().subscribe((clubLadder: Club[]) => {
