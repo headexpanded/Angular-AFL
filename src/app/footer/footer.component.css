@@ -1,0 +1,10 @@
+
+.footer{
+    display:flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.legend{
+    padding-bottom: 12px;
+}
