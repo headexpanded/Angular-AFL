@@ -29,9 +29,15 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  place-items: center;
   font-family: var(--MainFont), sans-serif;
   margin:auto;
   min-height: 100%;
+  width:100%;
+}
+
+main{
+  width:90%;
 }
 
 section{

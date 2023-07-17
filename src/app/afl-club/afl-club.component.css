@@ -5,8 +5,8 @@
   font-size: clamp(0.75rem, 2vw, 1.5rem);
   font-weight: 600;
   height: min(40px, 2rem);
-  justify-content: space-around;
-  padding: 0px 8px;
+  justify-content: space-evenly;
+  padding: 0px 16px 0px 8px;
   text-align: center;
 }
 
@@ -34,16 +34,19 @@ img {
 
 .club-logo {
   display: none;
+  
 }
 
 .club-name {
-  padding: 0px 8px;
+  padding: 0px 0px 0px 0px;
   text-align: left;
-  width: clamp(24vw, 100px, 240px);
+  width: clamp(22vw, 100px, 240px);
 }
 
 .club-points {
   width: var(--DataSpanWidth);
+  padding: 0px 0px 0px 0px;
+  text-align: center;
 }
 
 .club-played {
@@ -70,10 +73,14 @@ img {
 
 @media screen and (min-width: 769px) {
   .club-logo {
-    align-items: center;
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
+    place-items: center;
     padding: 8px;
+  }
+  .club-name {
+    width: clamp(24vw, 100px, 240px);
   }
 }
