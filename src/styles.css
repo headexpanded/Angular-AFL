@@ -6,18 +6,17 @@
 }
 
 @font-face {
-  font-family: "Inter";
+  font-family: var(--MainFont);
   src: url("./assets/fonts/Inter.var.woff2") format("woff2-variations");
-  font-weight: 100 900;
-  font-style: oblique 0deg 10deg;
   font-display: fallback;
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
 }
 
 :root {
   --MainFont: "Inter", sans-serif;
   --TitleColor: #1d18bc;
   --ClubDataColor: #1a1a1a;
-
   --DataSpanWidth: clamp(6vw, 10px, 20px);
 
 }
@@ -31,7 +30,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--MainFont), sans-serif;
-  /* width: min(1200px, calc(80% + 120px)); */
   margin:auto;
   min-height: 100%;
 }
@@ -47,7 +45,7 @@ a {
 
 footer{
   color: var(--MainFont);
-  padding: 1rem;
   font-size: .75rem;
+  padding: 1rem;
   text-align: center;
 }
