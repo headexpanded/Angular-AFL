@@ -6,13 +6,16 @@ const routeConfig: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Home Page',
+    title: 'Ad-Free AFL',
   },
   {
     path: 'details/:id',
     component: ClubDetailsComponent,
     title: 'Club Details',
   },
+  {
+    path: '**', redirectTo: ''
+  }
 ];
 
 export default routeConfig;

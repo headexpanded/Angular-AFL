@@ -2,18 +2,20 @@ import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent, RouterModule],
+  imports: [HeaderComponent, HomeComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'Angular-AFL';
   meta: Meta = inject(Meta);
+  headerTitle = 'Ad-Free AFL Ladder';
 
   constructor() {
     this.meta.addTags([
@@ -30,7 +32,7 @@ export class AppComponent {
         name: 'author',
         content: 'https://github.com/headexpanded/Angular-AFL',
       },
-      {name: 'robots', content: 'all no-archive'},
+      { name: 'robots', content: 'all no-archive' },
     ]);
   }
 }

@@ -3,6 +3,8 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { env} from '@environments/env';
+
 import { Club } from './club';
 import { LogoService } from './logo.service';
 import { ClubGames } from './club-games';
@@ -11,24 +13,18 @@ import { ClubGames } from './club-games';
   providedIn: 'root',
 })
 export class ClubService {
-  // testing json data source: run json-server --watch
-  url = 'http://localhost:3000/standings';
-
-  // live json data source
-  private standingsUrl = 'https://api.squiggle.com.au/?q=standings';
-
+  
   constructor(private http: HttpClient, private logoService: LogoService) {}
 
   private fetchStandings(): Observable<any> {
-    return this.http.get(this.standingsUrl, {
+    return this.http.get(env.standingsUrl, {
       observe: 'body',
       responseType: 'json',
     });
   }
 
   private fetchClubData(teamId: number): Observable<any> {
-    const clubDataUrl = `https://api.squiggle.com.au/?q=games;year=2023;team=${teamId}`;
-    return this.http.get(clubDataUrl, {
+    return this.http.get(`${env.clubDataUrl};team=${teamId}`, {
       observe: 'body',
       responseType: 'json',
     });
@@ -80,7 +76,6 @@ export class ClubService {
             game.venue = 'Showgrounds';
           }
         })
-        
 
         return clubGames;
       })

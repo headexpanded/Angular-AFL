@@ -7,6 +7,7 @@ import { ClubService } from '../club.service';
 import { LadderHeaderComponent } from '../ladder-header/ladder-header.component';
 import { AflClubComponent } from '../afl-club/afl-club.component';
 import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { FooterComponent } from '../footer/footer.component';
     RouterOutlet,
     LadderHeaderComponent,
     AflClubComponent,
+    HeaderComponent,
     FooterComponent,
   ],
   templateUrl: 'home.component.html',
@@ -25,6 +27,7 @@ import { FooterComponent } from '../footer/footer.component';
 export class HomeComponent {
   clubLadder: Club[] = [];
   clubService: ClubService = inject(ClubService);
+  headerTitle= 'AFL Ladder: No Ads!';
   footerLegend =
     'Legend: # Rank, Pts Points, P Played, W Wins, D Draws, L Losses, % Percentage';
 
