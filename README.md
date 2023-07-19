@@ -1,7 +1,8 @@
 <h1 align="center">Angular-AFL</h1>
 
 <h3 align="center">A simple Aussie Rules AFL ladder, without the gambling ads.</h3>
-
+</br>
+[Angular-AFL](https://angular-afl.web.app/)
 </br></br>
 The official AFL ladder is drenched in advertising and loads slowly.
 So this ladder has no ads and loads quickly. Click on a team for info about their season.
