@@ -18,12 +18,12 @@
   --TitleColor: #1d18bc;
   --ClubDataColor: #1a1a1a;
   --DataSpanWidth: clamp(6vw, 10px, 20px);
-
 }
 
 html {
   scroll-behavior: smooth;
   user-select: none;
+  height: 100%;
 }
 
 body {
@@ -31,16 +31,16 @@ body {
   flex-direction: column;
   place-items: center;
   font-family: var(--MainFont), sans-serif;
-  margin:auto;
-  min-height: 100%;
-  width:100%;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
-main{
-  width:90%;
+main {
+  width: 90%;
 }
 
-section{
+section {
   padding: 4px 0px;
   width: 100%;
 }
@@ -49,9 +49,9 @@ a {
   text-decoration: none;
 }
 
-footer{
+footer {
   color: var(--MainFont);
-  font-size: .75rem;
+  font-size: 0.75rem;
   padding: 1rem;
   text-align: center;
 }

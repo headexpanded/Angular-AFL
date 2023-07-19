@@ -3,7 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { env} from '@environments/env';
+import { env } from '@environments/env';
 
 import { Club } from './club';
 import { LogoService } from './logo.service';
@@ -13,11 +13,15 @@ import { ClubGames } from './club-games';
   providedIn: 'root',
 })
 export class ClubService {
-  
-  constructor(private http: HttpClient, private logoService: LogoService) {}
+  private dataUrl: string;
+
+  constructor(private http: HttpClient, private logoService: LogoService) {
+    this.dataUrl = env.standingsUrl;
+    console.log("Using data URL: " + this.dataUrl);
+  }
 
   private fetchStandings(): Observable<any> {
-    return this.http.get(env.standingsUrl, {
+    return this.http.get(this.dataUrl, {
       observe: 'body',
       responseType: 'json',
     });
@@ -75,7 +79,7 @@ export class ClubService {
           if (game.venue === 'Sydney Showground') {
             game.venue = 'Showgrounds';
           }
-        })
+        });
 
         return clubGames;
       })
