@@ -1,11 +1,14 @@
-<h1 align="center">Angular-AFL</h1>
+## [Angular-AFL](https://angular-afl.web.app/)
 
-<h3 align="center">A simple Aussie Rules AFL ladder, without the gambling ads.</h3>
-</br>
-[Angular-AFL](https://angular-afl.web.app/)
-</br></br>
+A simple Aussie Rules AFL ladder, without the gambling ads: [here it is on-line.](https://angular-afl.web.app/)
+
+
+
 The official AFL ladder is drenched in advertising and loads slowly.
-So this ladder has no ads and loads quickly. Click on a team for info about their season.
+
+So this ladder has no ads, and loads quickly. That'll show 'em.
+
+Click on any team for more info about their season.
 - Data comes from the API at [Squiggle](https://squiggle.com.au/)
 
 - I used [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
