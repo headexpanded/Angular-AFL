@@ -1,6 +1,6 @@
 .club-header {
   align-items: center;
-  color: var(--TitleColor);
+  color: var(--clr-accent-primary);
   display: flex;
   flex-direction: column;
   justify-content: center;

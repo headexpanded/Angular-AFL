@@ -12,8 +12,8 @@ header {
 }
 
 header span h1 {
-  color: var(--TitleColor);
-  font-family: var(--MainFont);
+  color: var(--clr-accent-primary);
+  font-family: var(--ff-accent);
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.1rem;

@@ -11,19 +11,19 @@
 }
 
 .club-ladder-data:hover {
-  background-color: rgb(235, 235, 235);
+  background-color: var(--clr-accent-secondary);
 }
 
 .finals {
-  border-bottom: 2px dotted red;
+  border-bottom: 2px dotted var(--clr-finals);
 }
 
 .top-four{
-  border-bottom: 2px dotted gray;
+  border-bottom: 2px dotted var(--clr-top-four);
 }
 
 span {
-  color: var(--ClubDataColor);
+  color: var(--clr-text-dark);
   font-weight: 400;
 }
 

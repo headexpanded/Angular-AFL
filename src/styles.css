@@ -14,9 +14,20 @@
 }
 
 :root {
-  --MainFont: "Inter", sans-serif;
-  --TitleColor: #1d18bc;
-  --ClubDataColor: #1a1a1a;
+  /* fonts */
+  --ff-primary: "Inter", sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-accent:var(--ff-primary);
+
+  /* colors */
+  --clr-accent-primary: hsl(242, 77%, 42%);
+  --clr-accent-secondary: hsl(0, 0%, 92%);
+  --clr-text-dark: hsl(0, 0%, 10%);
+  --clr-text-light: hsl(0, 0%, 100%);
+  --clr-finals: hsl(0, 100%, 50%);
+  --clr-top-four: hsl(0, 0%, 50%);
+
+  /* standard span width for data */
   --DataSpanWidth: clamp(6vw, 10px, 20px);
 }
 
@@ -30,7 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  font-family: var(--MainFont), sans-serif;
+  font-family: var(--ff-body), sans-serif;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -50,7 +61,7 @@ a {
 }
 
 footer {
-  color: var(--MainFont);
+  color: var(--ff-body);
   font-size: 0.75rem;
   padding: 1rem;
   text-align: center;
