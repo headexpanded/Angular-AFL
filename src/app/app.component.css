@@ -1,27 +1,33 @@
-:host {
+/* :host {
   height: calc(100% - 24px);
   display: flex;
   flex-direction: column;
   place-items: center;
   width: 100%;
-}
+} */
 
 header {
   display: block;
   margin: 8px 0px 0px 0px;
+  width: 100%;
 }
 
 header span h1 {
   color: var(--clr-accent-primary);
   font-family: var(--ff-accent);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: var(--fs--400);
+  font-weight: var(--fw-bold);
   letter-spacing: -0.1rem;
   padding: 4px;
   text-align: centre;
+}
+main {
+  height: calc(100% - 24px);
+  width: 100%;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
