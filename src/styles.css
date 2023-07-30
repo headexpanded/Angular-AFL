@@ -19,6 +19,16 @@
   --ff-body: var(--ff-primary);
   --ff-accent:var(--ff-primary);
 
+  /* font weights */
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* font sizes */
+  --fs-200: 0.5rem;
+  --fs-300: 0.75rem;
+  --fs-400: 1rem;
+  --fs-600: 1.5rem;
+
   /* colors */
   --clr-accent-primary: hsl(242, 77%, 42%);
   --clr-accent-secondary: hsl(0, 0%, 92%);
@@ -27,14 +37,20 @@
   --clr-finals: hsl(0, 100%, 50%);
   --clr-top-four: hsl(0, 0%, 50%);
 
+  /* sizes */
+
+
   /* standard span width for data */
   --DataSpanWidth: clamp(6vw, 10px, 20px);
 }
+
+
 
 html {
   scroll-behavior: smooth;
   user-select: none;
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -48,21 +64,16 @@ body {
 }
 
 main {
-  width: 90%;
+  height: calc(100% - 24px);
+  width: 100%;
 }
 
 section {
   padding: 4px 0px;
-  width: 100%;
 }
 
 a {
   text-decoration: none;
 }
 
-footer {
-  color: var(--ff-body);
-  font-size: 0.75rem;
-  padding: 1rem;
-  text-align: center;
-}
+
